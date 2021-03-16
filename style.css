@@ -1,0 +1,357 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: url("reindeer.png") no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+.nav {
+  width: 200px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav .logo {
+  height: 50%;
+  background: #ffeb00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.nav .logo h1 {
+  font-family: "Sniglet", cursive;
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: 2px;
+  pointer-events: none;
+}
+
+.nav .logo h2 {
+  font-family: "Sniglet", cursive;
+  font-weight: 300;
+  font-size: 28px;
+  letter-spacing: 2px;
+  pointer-events: none;
+  position: absolute;
+  top: 15px;
+  left: 80px;
+}
+
+.nav .logo h1 span {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: 60px;
+}
+
+.nav .menu-links {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  padding-top: 50px;
+}
+
+.nav .menu-links ul {
+  width: 100%;
+}
+
+.nav .menu-links ul a {
+  padding: 10px;
+  color: #494949;
+  text-decoration: none;
+  font-family: "Sniglet", cursive;
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+.nav .menu-links ul a li:hover {
+  background: #494949;
+  color: #fff;
+}
+
+.scrolldown {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  transform: rotate(-90deg);
+  font-family: "Sniglet", cursive;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.scrolldown:before {
+  content: "";
+  background: transparent;
+  border-top: 2px solid #494949;
+  width: 65px;
+  margin: 0 10px 0 0;
+  transform: translateY(10px);
+}
+
+.scrolldown:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 100px;
+  display: block;
+  margin: auto;
+  background: #494949;
+  width: 0;
+  height: 2px;
+  transition: 0.6s;
+  border-radius: 5px;
+}
+
+.scrolldown:hover:after {
+  width: 100%;
+}
+
+.text {
+  position: absolute;
+  top: 18%;
+  right: 180px;
+  transform: translateY(-50%);
+  text-align: right;
+  color: #494949;
+}
+
+.text p {
+  font-family: "Sniglet", cursive;
+  color: #494949;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+
+.text .title {
+  font-family: "Poppins", sans-serif;
+  font-size: 140px;
+  letter-spacing: -5px;
+  pointer-events: none;
+}
+
+.watchnow {
+  position: absolute;
+  top: 60%;
+  right: 0;
+  transform: translateY(-50%);
+  background: #ffeb00;
+  padding: 30px 180px 30px 30px;
+}
+
+.watchnow a {
+  font-family: "Sniglet", cursive;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  border-bottom: 3px solid #000;
+  margin-bottom: 5px;
+}
+
+.watchnow .fa-play {
+  color: #fff;
+  font-size: 30px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.media {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+}
+
+.media ul li {
+  display: inline-block;
+  padding: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.6s;
+  border-radius: 50%;
+}
+
+.media ul li:hover {
+  background: #ffeb00;
+}
+
+.media a {
+  color: #494949;
+}
+
+.ellipse-container {
+  width: 608px;
+  height: 608px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  z-index: -1;
+}
+
+.ellipse {
+  position: absolute;
+  top: 0;
+  border-radius: 50%;
+  border-style: solid;
+}
+
+.ellipse.thin {
+  width: 100%;
+  height: 100%;
+  border-width: 1px;
+  border-color: #494949;
+  opacity: 0.5;
+}
+
+.ellipse.thick {
+  width: 93%;
+  height: 93%;
+  border-width: 10px;
+  border-color: #fff;
+  transform: rotate(-45deg);
+  top: 12px;
+  left: 12px;
+}
+
+.ellipse.yellow {
+  width: 93%;
+  height: 93%;
+  border-width: 10px;
+  border-color: #ffeb00 transparent;
+  transform: rotate(-45deg);
+  top: 12px;
+  left: 12px;
+  animation: ellipseRotate 15s ease-in-out infinite;
+}
+
+@keyframes ellipseRotate {
+  0% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(-405deg);
+  }
+}
+
+.circle1,
+.circle2 {
+  border-style: solid;
+  width: 64px;
+  height: 64px;
+  border-width: 1px;
+  border-radius: 50%;
+  border-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+}
+
+.circle1 {
+  top: 150px;
+  left: 150px;
+}
+
+.circle2 {
+  bottom: 150px;
+  right: 130px;
+}
+
+.circle1:before,
+.circle1:after,
+.circle2:before,
+.circle2:after {
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle1:before,
+.circle2:before {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  z-index: 1;
+}
+
+.circle1:after,
+.circle2:after {
+  width: 40px;
+  height: 40px;
+  background: #ffeb00;
+}
+
+.circle1 span,
+.circle2 span {
+  position: absolute;
+  top: 25px;
+  left: 75px;
+  font-family: "Sniglet", cursive;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+.circle1 span {
+  left: 75px;
+}
+
+.circle2 span {
+  left: -120px;
+}
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background: #ffeb00;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.overlay h1 {
+  font-family: "agency fb";
+  font-weight: bold;
+  font-size: 4rem;
+  letter-spacing: 15px;
+}
+
+.overlay span {
+  font-family: "Sniglet", cursive;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
